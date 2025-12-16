@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <main class="page">
+
+    <section class="shell">
+
+      <!-- TOP HERO HEADER -->
+      <header class="hero">
+        <div class="hero-icon">
+          <!-- simple user icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4
+                     1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-6 2.24-6
+                     5v1h12v-1c0-2.76-2.67-5-6-5z" />
+          </svg>
+        </div>
+        <h1>Student Registration</h1>
+        <p>Enroll with your details to get started.</p>
+      </header>
+
+      <!-- BODY CARD -->
+      <section class="card-body">
+        <form id="regForm" method="post" action="process.php" novalidate>
+
+          <!-- First / Last -->
+          <div class="row-2">
+            <div class="form-group">
+              <label class="field-label" for="firstName">First name <span>*</span></label>
+              <div class="input-shell">
+                <span class="input-icon">👤</span>
+                <input id="firstName" name="firstName" type="text" placeholder="John" />
+              </div>
+              <div class="error-text"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="lastName">Last name <span>*</span></label>
+              <div class="input-shell">
+                <span class="input-icon">👤</span>
+                <input id="lastName" name="lastName" type="text" placeholder="Doe" />
+              </div>
+              <div class="error-text"></div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="field-label" for="email">Email address <span>*</span></label>
+            <div class="input-shell">
+              <span class="input-icon">✉️</span>
+              <input id="email" name="email" type="email" placeholder="john.doe@example.com" />
+            </div>
+            <div class="error-text"></div>
+          </div>
+
+          <!-- Phone / DOB -->
+          <div class="row-2">
+            <div class="form-group">
+              <label class="field-label" for="phone">Phone number <span>*</span></label>
+              <div class="input-shell">
+                <span class="input-icon">📞</span>
+                <input id="phone" name="phone" type="tel" placeholder="10-digit number" />
+              </div>
+              <div class="error-text"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="dob">Date of birth <span>*</span></label>
+              <div class="input-shell">
+                <span class="input-icon">📅</span>
+                <input id="dob" name="dob" type="date" />
+              </div>
+              <div class="error-text"></div>
+            </div>
+          </div>
+
+          <!-- Age / Country -->
+          <div class="row-2">
+            <div class="form-group">
+              <label class="field-label" for="age">Age <span>*</span></label>
+              <div class="input-shell">
+                <span class="input-icon">#</span>
+                <input id="age" name="age" type="number" placeholder="20" />
+              </div>
+              <div class="error-text"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="country">Country <span>*</span></label>
+              <div class="input-shell">
+                <span class="input-icon">🌍</span>
+                <select id="country" name="country">
+                  <option value="">Select country</option>
+                  <option>India</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Australia</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="error-text"></div>
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <div class="fieldset-group" id="genderGroup">
+            <div class="fieldset-title-row">
+              <span class="section-label">Gender <span>*</span></span>
+              <div class="error-text"></div>
+            </div>
+            <div class="chip-row">
+              <label class="chip">
+                <input type="radio" name="gender" value="Male" />
+                <span class="chip-icon">👤</span>
+                <span>Male</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="gender" value="Female" />
+                <span class="chip-icon">👤</span>
+                <span>Female</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="gender" value="Other" />
+                <span class="chip-icon">👤</span>
+                <span>Other</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="fieldset-group" id="skillsGroup">
+            <div class="fieldset-title-row">
+              <span class="section-label">Skills <span>*</span></span>
+              <div class="error-text"></div>
+            </div>
+            <div class="chip-grid">
+              <label class="chip">
+                <input type="checkbox" name="skills[]" value="HTML" />
+                <span>HTML</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="skills[]" value="CSS" />
+                <span>CSS</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="skills[]" value="JavaScript" />
+                <span>JavaScript</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="skills[]" value="Python" />
+                <span>Python</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="form-group">
+            <label class="field-label" for="address">Address <span>*</span></label>
+            <div class="input-shell textarea-shell">
+              <span class="input-icon">📍</span>
+              <textarea id="address" name="address" rows="3" placeholder="Enter your full address..."></textarea>
+            </div>
+            <div class="error-text"></div>
+          </div>
+
+          <!-- Bio -->
+          <div class="form-group">
+            <label class="field-label" for="bio">Short bio <span>*</span></label>
+            <div class="input-shell textarea-shell">
+              <span class="input-icon">📝</span>
+              <textarea id="bio" name="bio" rows="4" placeholder="Tell us a little about yourself..."></textarea>
+            </div>
+            <div class="error-text"></div>
+          </div>
+
+          <!-- Actions -->
+          <div class="actions">
+            <button type="button" id="resetBtn" class="btn btn-ghost">Reset</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">
+              Submit Registration
+            </button>
+          </div>
+
+          <p class="terms-text">
+            By registering, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span>.
+          </p>
+        </form>
+      </section>
+    </section>
+
+    <!-- RESULT CARD -->
+    <section id="resultArea" class="shell result-shell hidden"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
